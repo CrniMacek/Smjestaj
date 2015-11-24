@@ -7,4 +7,6 @@ import com.posao.igor.smjestaj.podaci.Lokacija;
  */
 public interface ILokacija {
     void prikaziLokaciju(Lokacija lokacija);
+    void prikaziSlikeLokacije(Lokacija lokacija, String slikaUrl );
+    void prikaziListuLokacija();
 }

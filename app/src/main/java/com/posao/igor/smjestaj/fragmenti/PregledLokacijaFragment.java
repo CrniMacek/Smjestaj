@@ -1,5 +1,6 @@
 package com.posao.igor.smjestaj.fragmenti;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -40,6 +41,10 @@ public class PregledLokacijaFragment extends Fragment{
     public void onAttach(Activity activity) {
         // TODO Auto-generated method stub
         super.onAttach(activity);
+/*        ActionBar ab = activity.getActionBar();
+        assert ab != null;
+        ab.setDisplayHomeAsUpEnabled(false);
+        ab.setTitle(R.string.app_name);*/
         this.iLokacija = (ILokacija) activity;
     }
 
@@ -58,6 +63,9 @@ public class PregledLokacijaFragment extends Fragment{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (lvLokacije.getCheckedItemPosition() == AdapterView.INVALID_POSITION)
                     return;
+
+                /* Ovdje bih trebao ubaciti dio koda za savedInstanceState jer u bundle moram staviti
+                 * ovu lokaciju koju saljem zbog landscape*/
                 iLokacija.prikaziLokaciju(adapter.getItem(lvLokacije.getCheckedItemPosition()));
             }
         });

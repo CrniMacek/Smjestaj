@@ -3,9 +3,11 @@ package com.posao.igor.smjestaj.fragmenti;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -44,10 +46,10 @@ public class PregledDetaljaLokacijeFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        ActionBar ab = activity.getActionBar();
+/*        ActionBar ab = activity.getActionBar();
+        assert ab != null;
         ab.setDisplayHomeAsUpEnabled(true);
-        ab.setIcon(null);
-        ab.setTitle(lokacija.getNaziv());
+        ab.setTitle(lokacija.getNaziv());*/
         this.iLokacija = (ILokacija) activity;
     }
 
@@ -89,6 +91,13 @@ public class PregledDetaljaLokacijeFragment extends Fragment {
                     .into(ivOpisVelikaSlika);
         }
 
+        ivOpisVelikaSlika.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iLokacija.prikaziSlikeLokacije(lokacija, lokacija.getSlikaUrl1());
+            }
+        });
+
         if (this.lokacija.getSlikaUrl2() != null){
             Picasso.with(getActivity())
                     .load(lokacija.getSlikaUrl2())
@@ -96,6 +105,13 @@ public class PregledDetaljaLokacijeFragment extends Fragment {
                     .fit()
                     .into(ivMalaSlika1);
         }
+
+        ivMalaSlika1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iLokacija.prikaziSlikeLokacije(lokacija, lokacija.getSlikaUrl2());
+            }
+        });
 
         if (this.lokacija.getSlikaUrl3() != null){
 
@@ -106,6 +122,13 @@ public class PregledDetaljaLokacijeFragment extends Fragment {
                     .into(ivMalaSlika2);
         }
 
+        ivMalaSlika2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iLokacija.prikaziSlikeLokacije(lokacija, lokacija.getSlikaUrl3());
+            }
+        });
+
         if (this.lokacija.getSlikaUrl4() != null) {
 
             Picasso.with(getActivity())
@@ -115,7 +138,17 @@ public class PregledDetaljaLokacijeFragment extends Fragment {
                     .into(ivMalaSlika3);
         }
 
+        ivMalaSlika3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iLokacija.prikaziSlikeLokacije(lokacija, lokacija.getSlikaUrl4());
+            }
+        });
+
+
         return view;
 
     }
+
+
 }
