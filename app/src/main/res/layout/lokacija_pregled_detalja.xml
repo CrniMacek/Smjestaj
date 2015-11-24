@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/ivOpisVelikaSlika"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/opis_velika_slika"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        />
+
+    <RatingBar
+        style="@style/locationRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rbOcjena"
+        android:isIndicator="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:numStars="5"
+        android:stepSize="0.1"
+        />
+
+    <TextView
+        android:id="@+id/tvNaziv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tvAdresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tvPostanskiBr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/tvGrad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvOpis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/ivMalaSlika1"
+            android:layout_width="@dimen/opis_mala_slika_sirina"
+            android:layout_height="@dimen/opis_mala_slika_visina"
+            android:layout_gravity="left"
+            />
+
+        <ImageView
+            android:id="@+id/ivMalaSlika2"
+            android:layout_width="@dimen/opis_mala_slika_sirina"
+            android:layout_height="@dimen/opis_mala_slika_visina"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            />
+
+        <ImageView
+            android:id="@+id/ivMalaSlika3"
+            android:layout_marginLeft="10dp"
+            android:layout_width="@dimen/opis_mala_slika_sirina"
+            android:layout_height="@dimen/opis_mala_slika_visina"
+            android:layout_gravity="right"
+            />
+    </LinearLayout>
+</LinearLayout>

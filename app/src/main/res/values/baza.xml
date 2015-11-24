@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="kreiranje_lokacija">
+        CREATE TABLE Lokacija
+        (
+            ID integer primary key autoincrement,
+            Naziv text not null,
+            Adresa text not null,
+		    PostanskiBr integer not null,
+            Grad text not null,
+            Opis text not null,
+            Ocjena integer not null,
+            Slika1URL text,
+            Slika2URL text,
+            Slika3URL text,
+            Slika4URL text
+        )
+    </string>
+</resources>

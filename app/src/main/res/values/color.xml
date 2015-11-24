@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#FF0000</color>
+    <color name="my_awesome_red">#FF0000</color>
+    <color name="my_awesome_darker_red">#FF0011</color>
+    <color name="oznaka_na_listi">#C2F1FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#555555</color>
+</resources>

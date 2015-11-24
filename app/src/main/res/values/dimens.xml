@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="lokacija_slika">60dp</dimen>
+    <dimen name="opis_velika_slika">200dp</dimen>
+    <dimen name="opis_mala_slika_visina">110dp</dimen>
+    <dimen name="opis_mala_slika_sirina">100dp</dimen>
+</resources>
