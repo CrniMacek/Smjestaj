@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.Gallery;
 import android.widget.ImageView;
@@ -27,7 +28,7 @@ public class PregledSlikaLokacijeFragment extends Fragment {
 
     Gallery gallery;
     Lokacija lokacija;
-    ImageView imageView;
+    WebView webView;
     String prvaSlikaUrl;
     ILokacija iLokacija;
 
@@ -63,7 +64,7 @@ public class PregledSlikaLokacijeFragment extends Fragment {
 
         View viewSlika = inflater.inflate(R.layout.slika_pregled,container,false);
 
-        this.imageView = (ImageView) viewSlika.findViewById(R.id.image1);
+        this.webView = (WebView) viewSlika.findViewById(R.id.image1);
 
         final String[] imageStrs = {
                 lokacija.getSlikaUrl1(),
@@ -72,11 +73,14 @@ public class PregledSlikaLokacijeFragment extends Fragment {
                 lokacija.getSlikaUrl4()
         };
 
+/*
         Picasso.with(getActivity())
                 .load(prvaSlikaUrl)
                 .noFade()
                 .fit()
                 .into(imageView);
+*/
+        this.webView.loadUrl(prvaSlikaUrl);
 
         this.gallery  = (Gallery) viewSlika.findViewById(R.id.gallery1);
 
@@ -87,11 +91,13 @@ public class PregledSlikaLokacijeFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-                Picasso.with(parent.getContext())
+/*                Picasso.with(parent.getContext())
                         .load(imageStrs[position])
                         .noFade()
                         .fit()
-                        .into(imageView);
+                        .into(imageView);*/
+
+                webView.loadUrl(imageStrs[position]);
             }
         });
 
